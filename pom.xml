@@ -88,10 +88,19 @@
                             <pullNewerImage>false</pullNewerImage>
                         </configuration>
                     </execution>
+                    <execution>
+                        <id>tag-image</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>tag</goal>
+                        </goals>
+                        <configuration>
+                            <image>${project.groupId}/${project.artifactId}</image>
+                            <newName>plato:5000/${project.groupId}/${project.artifactId}</newName>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
-
 </project>
