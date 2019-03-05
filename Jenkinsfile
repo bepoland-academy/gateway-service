@@ -4,7 +4,10 @@ pipeline {
     stage('Build') {
       steps {
         git(url: 'https://github.com/bepoland-academy/users-service', branch: 'development')
-        sh 'mvn clean package dockerfile:tag dockerfile:push -Ddockerfile.repository=http://plato:5000'
+        sh '''mvn clean install
+docker build -t pl.betse.beontime/gateway-service:latest .
+docker tag pl.betse.beontime/gateway-service:latest plato:5000/pl.betse.beontime/gateway-service
+docker push plato:5000/pl.betse.beontime/gateway-service'''
       }
     }
   }
