@@ -95,9 +95,9 @@
                             <goal>tag</goal>
                         </goals>
                         <configuration>
-                            <image>${project.groupId}/${project.artifactId}</image>
-                            <newName>plato:5000/${project.groupId}/${project.artifactId}</newName>
-                        </configuration>
+                            <repository>plato:5000</repository>
+                            <tag>${project.groupId}/${project.artifactId}</tag>
+                         </configuration>
                     </execution>
                 </executions>
             </plugin>
