@@ -94,12 +94,13 @@
                         <goals>
                             <goal>tag</goal>
                         </goals>
-                        <configuration>
-                            <repository>plato:5000</repository>
-                            <tag>${project.groupId}/${project.artifactId}</tag>
-                         </configuration>
+
                     </execution>
                 </executions>
+                <configuration>
+                    <repository>plato:5000</repository>
+                    <tag>${project.groupId}/${project.artifactId}</tag>
+                </configuration>                    
             </plugin>
         </plugins>
     </build>
