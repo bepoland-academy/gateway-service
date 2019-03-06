@@ -34,7 +34,7 @@ pipeline {
     }
     stage('Docker compose Pull') {
       steps {
-        sh 'ssh ubuntu@main-server \'docker-compose pull\''
+        sh 'docker-compose -H main-server:2376 -f local/docker-compose.yaml pull'
       }
     }
   }
