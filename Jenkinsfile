@@ -27,5 +27,15 @@ pipeline {
         sh 'docker push build-server:5000/pl.betse.beontime/gateway-service'
       }
     }
+    stage('Docker Compose Pull') {
+      steps {
+        sh 'ssh ubuntu@main-server \'docker pull\''
+      }
+    }
+    stage('Deploy') {
+      steps {
+        sh 'ssh ubuntu@main-server \'docker-compose up -d\''
+      }
+    }
   }
 }
