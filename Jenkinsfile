@@ -34,7 +34,7 @@ pipeline {
     }
     stage('Docker compose Pull') {
       steps {
-        sh 'ssh ubuntu@main-server \'docker-compose pill\''
+        sh 'ssh ubuntu@main-server \'docker-compose pull\''
       }
     }
   }
