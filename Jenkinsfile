@@ -16,10 +16,15 @@ pipeline {
         sh 'docker build -t pl.betse.beontime/gateway-service:latest .'
       }
     }
-    stage('Push Docker Image') {
+    stage('Tag Docker Image') {
       steps {
         sh '''docker tag pl.betse.beontime/gateway-service:latest build-server:5000/pl.betse.beontime/gateway-service
-docker push build-server:5000/pl.betse.beontime/gateway-service'''
+'''
+      }
+    }
+    stage('Push Docker Image') {
+      steps {
+        sh 'docker push build-server:5000/pl.betse.beontime/gateway-service'
       }
     }
   }
