@@ -88,19 +88,7 @@
                             <pullNewerImage>false</pullNewerImage>
                         </configuration>
                     </execution>
-                    <execution>
-                        <id>tag-image</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>tag</goal>
-                        </goals>
-
-                    </execution>
-                </executions>
-                <configuration>
-                    <repository>plato:5000</repository>
-                    <tag>${project.groupId}/${project.artifactId}</tag>
-                </configuration>                    
+                </executions>                  
             </plugin>
         </plugins>
     </build>
