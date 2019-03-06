@@ -29,7 +29,6 @@ pipeline {
     }
     stage('Checkout Deployment Config') {
       steps {
-        sh 'ssh ubuntu@main-server \'docker pull\''
         git(url: 'https://github.com/bepoland-academy/deployment-configuration.git', branch: 'development')
       }
     }
